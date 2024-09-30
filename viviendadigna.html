@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vivienda Digna</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5; /* Fondo gris claro */
+        }
+
+        header {
+            background-color: #388e3c; /* Verde oscuro */
+            color: white;
+            padding: 1em;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 700px;
+            background-image: url('https://i0.wp.com/conexionnoticias.co/wp-content/uploads/2024/03/Vivienda-docente-una-iniciativa-para-mejorar-la-calidad-de-vida-de-los-educadores-colombianos.webp?fit=620%2C354&ssl=1');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 5px solid #0d47a1; /* Borde azul */
+        }
+
+        section {
+            padding: 20px;
+            margin: 10px;
+            text-align: justify;
+            background-color: #ffffff; /* Fondo blanco para las secciones */
+            border-radius: 10px; /* Esquinas redondeadas */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra */
+        }
+
+        h2 {
+            color: #388e3c; /* Verde medio */
+            text-align: center;
+        }
+
+        .proyectos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+        }
+
+        .proyecto {
+            background-color: #c8e6c9; /* Verde claro */
+            border-radius: 15px;
+            padding: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s; /* Transición suave */
+            cursor: pointer; /* Cambia el cursor al pasar sobre el cuadro */
+        }
+
+        .proyecto:hover {
+            transform: scale(1.05); /* Agranda el cuadro al pasar el mouse */
+        }
+
+        .contacto {
+            background-color: #000000; /* Negro */
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            margin: auto;
+            max-width: 400px;
+            position: relative;
+            bottom: 20px;
+        }
+
+        .contacto p {
+            margin: 5px 0;
+        }
+
+        .btn-ubicacion {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #388e3c; /* Verde oscuro */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 50px; /* Bordes redondeados */
+            cursor: pointer;
+            font-size: 16px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #388e3c; /* Verde oscuro */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilo para el cuadro de imagen grande */
+        .imagen-grande {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            z-index: 10; /* Asegúrate de que esté en la parte superior */
+            border-radius: 15px;
+            padding: 10px;
+        }
+
+        .imagen-grande img {
+            max-width: 100%;
+            border-radius: 15px;
+        }
+
+        .cerrar-imagen {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+    </style>
+    <script>
+        function abrirUbicacion() {
+            // Llama a la API de geolocalización del navegador
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    // Abre Google Maps en la ubicación actual
+                    window.open(`https://www.google.com/maps/@${lat},${lon},15z`, '_blank');
+                }, function() {
+                    alert("No se pudo obtener la ubicación.");
+                });
+            } else {
+                alert("Geolocalización no es soportada en este navegador.");
+            }
+        }
+
+        function mostrarImagenCompleta(src) {
+            const imagenGrande = document.getElementById("imagen-grande");
+            const img = document.getElementById("img-grande");
+            imagenGrande.style.display = "block";
+            img.src = src;
+        }
+
+        function cerrarImagen() {
+            const imagenGrande = document.getElementById("imagen-grande");
+            imagenGrande.style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Vivienda Digna</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero-image"></div>
+
+    <section id="inicio">
+        <h2>Bienvenido a Vivienda Digna</h2>
+        <p>Nuestro compromiso es proporcionar soluciones de vivienda accesible y de calidad para todas las familias. Trabajamos para garantizar que cada persona tenga un lugar seguro y digno para vivir.</p>
+    </section>
+
+    <section id="proyectos">
+        <h2>Proyectos de Vivienda Digna</h2>
+        <div class="proyectos">
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://adminpaxzu-constructora.oikos.com.co/images/website/Noticias_2018/proyectos-de-vivienda-destacados-oikos-2018-1.jpg')">
+                <h3>Proyecto 1</h3>
+                <p>OIKOS Constructora</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://corporativo.compensar.com/vivienda/Biblioteca%20de%20estilos/webparts/feria-vivienda/img/avivir_1.jpg')">
+                <h3>Proyecto 2</h3>
+                <p>Unidad Buena Vista</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://fundacioncompartir.org/sites/default/files/styles/slick_600x320/public/boyaca_con-potencial-para-proyectos-de-vivienda.jpg?itok=a7jcB58m')">
+                <h3>Proyecto 3</h3>
+                <p>Robledales II</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://www.cali.gov.co/vivienda/info/principal/media/pubInt/thumbs/thpub_700x400_140470.jpg')">
+                <h3>Proyecto 4</h3>
+                <p>Unidad Norte</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://cbolivarstoragedev.blob.core.windows.net/fileslive-2023-20-11/imagenes/proyectos/imagen-destacada/01_Imagen%20Exterior%20Acceso-610x440.webp')">
+                <h3>Proyecto 5</h3>
+                <p>Unidad Vista al Mar</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://adminpaxzu-constructora.oikos.com.co/images/website/Noticias-2017/caracteristicas-de-un-proyecto-de-vivienda-de-descanso-1.jpg')">
+                <h3>Proyecto 6</h3>
+                <p>Unidad San Germán</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://www.stereonoticiasvillavicencio.com/wp-content/uploads/2023/04/ViviendasMetaOK.jpg')">
+                <h3>Proyecto 7</h3>
+                <p>Vivienda Digna Unidad I</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://blob-elmanana.tresite.com/images/2019/10/20/cropw0h01benefician.02-focus-0-0-608-342.jpg')">
+                <h3>Proyecto 8</h3>
+                <p>Vivienda Digna Unidad II</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://centrourbano.com/revista/wp-content/uploads/casita-ok-.jpg')">
+                <h3>Proyecto 9</h3>
+                <p>Vivienda Digna Unidad III</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://adnoticias.mx/wp-content/uploads/2022/02/vista-casas-colinas-del-sol-3.3-1.jpeg')">
+                <h3>Proyecto 10</h3>
+                <p>Vivienda Digna Unidad IV</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://centrourbano.com/revista/wp-content/uploads/Vivienda-SHF.jpg')">
+                <h3>Proyecto 11</h3>
+                <p>Vivienda Digna Unidad V</p>
+            </div>
+            <div class="proyecto" onclick="mostrarImagenCompleta('https://www.mexicosocial.org/wp-content/uploads/2021/08/casas.jpg')">
+                <h3>Proyecto 12</h3>
+                <p>Vivienda Digna Unidad VI</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contáctanos</h2>
+        <div class="contacto">
+            <p>Para más información sobre nuestros proyectos:</p>
+            <p>Email: contacto@viviendadigna.com</p>
+            <p>Teléfono: +57 123 456 7890</p>
+        </div>
+    </section>
+
+    <button class="btn-ubicacion" onclick="abrirUbicacion()">Ubicación Actual</button>
+
+    <div class="imagen-grande" id="imagen-grande">
+        <button class="cerrar-imagen" onclick="cerrarImagen()">X</button>
+        <img id="img-grande" src="" alt="Imagen del proyecto">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Vivienda Digna. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
