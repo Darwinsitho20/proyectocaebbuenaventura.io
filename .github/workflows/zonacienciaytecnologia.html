@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciencia y Tecnología</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            background: white;
+            border-radius: 8px;
+            text-align: center; /* Centrado de texto */
+        }
+
+        .carousel {
+            position: relative;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-images img {
+            max-width: 100%;
+            display: block;
+            width: 100%;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Innovaciones en Ciencia y Tecnología</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h2>Bienvenidos a Nuestro Sitio</h2>
+        <p>Descubre las últimas innovaciones y avances en el campo de la ciencia y tecnología en el Complejo de Actividade Economicas para Buenaventura.</p>
+    </section>
+
+    <section id="proyectos">
+        <h2>Proyectos Destacados</h2>
+        <div class="carousel">
+            <div class="carousel-images">
+                <img src="https://www.dispatchtrack.com/hubfs/logistics-technology-trends.webp" alt="Proyecto 1">
+                <img src="https://mecaluxco.cdnwm.com/blog/img/bodega-automatica-autoportante-hayat-kimya-alto-europa.1.0.jpg" alt="Proyecto 2">
+                <img src="https://media.licdn.com/dms/image/D4D12AQFSSfzx1XkA3A/article-cover_image-shrink_720_1280/0/1670846226507?e=2147483647&v=beta&t=ocxLwImfdAs-9Wc1kCDrO1hNmAAjFMWCTtbsAHH5AZ8" alt="Proyecto 3">
+                <img src="https://mecaluxco.cdnwm.com/blog/img/espace-des-marques-easy-wms-mecalux-crisis-covid19.1.1.jpg?imwidth=1024&imdensity=1" alt="Proyecto 4">
+                <img src="https://logistica360.pe/wp-content/uploads/2023/06/La-tecnologia-como-pieza-clave-en-la-automatizacion-de-la-logistica.jpg" alt="Proyecto 5">
+                <img src="https://img.freepik.com/fotos-premium/zona-industrial-parque-tecnologico-centro-logistico-centro-carga-almacen_1417-22202.jpg" alt="Proyecto 6">
+                <img src="https://img.freepik.com/fotos-premium/centro-logistica-digital-es-representacion-realista-gran-centro-logistico_391229-25695.jpg" alt="Proyecto 7">
+                <img src="https://img.freepik.com/fotos-premium/centro-logistica-digital-es-representacion-realista-gran-centro-logistico_391229-25735.jpg" alt="Proyecto 8">
+                <img src="https://img.freepik.com/premium-photo/digital-logistics-hub-realistic-render-large-logistic-center_391229-25720.jpg" alt="Proyecto 9">
+                <img src="https://img.freepik.com/premium-photo/logistic-hub-aesthetics-interior-warehouse-modern-logistic-center-render_957479-40088.jpg" alt="Proyecto 10">
+            </div>
+            <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <div class="contact-info">
+            <p>Email: contacto@ejemplo.com</p>
+            <p>Teléfono: +123 456 7890</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Ciencia y Tecnología. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-images img');
+        const totalSlides = slides.length;
+
+        // Mostrar la primera imagen al cargar
+        showSlides(slideIndex);
+
+        // Cambiar la imagen al siguiente o anterior
+        function changeSlide(n) {
+            slideIndex += n;
+            if (slideIndex >= totalSlides) {
+                slideIndex = 0;
+            }
+            if (slideIndex < 0) {
+                slideIndex = totalSlides - 1;
+            }
+            showSlides(slideIndex);
+        }
+
+        // Mostrar la imagen actual
+        function showSlides(index) {
+            for (let slide of slides) {
+                slide.style.display = "none";  
+            }
+            slides[index].style.display = "block";  
+        }
+
+        // Cambiar automáticamente la imagen cada 10 segundos
+        setInterval(() => {
+            changeSlide(1);
+        }, 10000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAEB Buenaventura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ffcc00;
+            color: #003300;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+            text-align: center; /* Centrar títulos */
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #003300;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: justify; /* Justificar texto */
+        }
+        footer {
+            background-color: #003300;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .projects-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Centrado de proyectos */
+            margin: 20px;
+        }
+        .project-card {
+            background-color: #fff;
+            border-radius: 15px; /* Esquinas redondeadas */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            margin: 15px;
+            text-align: center;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+        .project-card img {
+            width: 100%;
+            height: 200px; /* Altura fija para mantener el cuadrado */
+        }
+        .project-card a {
+            display: block;
+            padding: 15px;
+            color: #003300;
+            font-weight: bold;
+            text-decoration: none;
+            background-color: #ffcc00;
+            border-top: 2px solid #003300;
+        }
+        .project-card a:hover {
+            background-color: #003300;
+            color: #ffcc00;
+        }
+        /* Estilos del carrusel */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 400px;
+        }
+        .carousel-slide {
+            display: flex;
+        }
+        .carousel-slide img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            line-height: 40px;
+            transform: translateY(-50%);
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        /* Estilos del formulario */
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto; /* Centrar el formulario */
+            display: flex;
+            flex-direction: column;
+        }
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .contact-form button {
+            background-color: #ffcc00;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .contact-form button:hover {
+            background-color: #003300;
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CAEB Buenaventura</h1>
+    <nav>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#noticias">Noticias</a>
+        <a href="#contactanos">Contactanos</a>
+    </nav>
+</header>
+
+<section id="nosotros">
+    <h2>Nosotros</h2>
+    <p>CAEB Buenaventura es un complejo dedicado al desarrollo económico y social de la región. Nuestro objetivo es generar oportunidades a través de proyectos innovadores que beneficien a la comunidad y promuevan la sostenibilidad.</p>
+</section>
+
+<section id="servicios">
+    <h2>Servicios</h2>
+    <p>Ofrecemos servicios de consultoría empresarial, capacitación, promoción de proyectos y networking. Nuestro enfoque es fortalecer el talento local y facilitar el crecimiento sostenible en Buenaventura.</p>
+</section>
+
+<section id="proyectos">
+    <h2>Proyectos</h2>
+    <div class="projects-section">
+        <div class="project-card">
+            <img src="https://images.adsttc.com/media/images/5890/502a/e58e/ce77/2e00/067c/newsletter/Langara-06-Andrew-Latreille.jpg?1485852703" alt="Zona de Ciencia y Tecnología">
+            <a href="zonacienciaytecnologia.html">Zona de Ciencia y Tecnología</a>
+        </div>
+        <div class="project-card">
+            <img src="https://aprende-logistica.com/wp-content/uploads/2024/05/zonas-de-actividades-logisticas-zal-importancia-y-funcionamiento.png" alt="Zona Industrial">
+            <a href="zonaindustrial.html">Zona Industrial</a>
+        </div>
+        <div class="project-card">
+            <img src="https://media.a24.com/p/3423b14e6b9fdd3bafd219aad917dd27/adjuntos/296/imagenes/008/751/0008751409/1200x675/smart/parques-industriales-pymes-argentinajpg.jpg" alt="Zona Civil e Infraestructura">
+            <a href="zonacivileinfraestructura.html">Zona Civil e Infraestructura</a>
+        </div>
+        <div class="project-card">
+            <img src="https://logistica360.pe/wp-content/uploads/2023/06/Perspectivas-y-tendencias-para-el-sector-portuario-hasta-el-2024.jpg" alt="Mejora Portuaria">
+            <a href="mejoraportuaria.html">Mejora Portuaria</a>
+        </div>
+        <div class="project-card">
+            <img src="https://mintransporte.gov.co/info/mintransporte/media/pubInt/thumbs/thpubInt_700X400_11661.webp" alt="Ferroviaria y Vial">
+            <a href="ferroviariayvial.html">Ferroviaria y Vial</a>
+        </div>
+        <div class="project-card">
+            <img src="https://imagenes.20minutos.es/files/image_990_556/uploads/imagenes/2023/02/24/li_plataforma-logistica.jpeg" alt="Sector Inmobiliario">
+            <a href="sectorinmobiliario.html">Sector Inmobiliario</a>
+        </div>
+        <div class="project-card">
+            <img src="https://www.ecoturismo.com/media/files/516_ballenasbahia-de-buenaventura.jpg" alt="Turismo">
+            <a href="sectorturistico.html">Turismo</a>
+        </div>
+        <div class="project-card">
+            <img src="https://www.buenaventura.gov.co/media/img/20231211_establecimiento_publico_ambiental_de.jpeg" alt="Sector Ambiental">
+            <a href="sectorambiental.html">Sector Ambiental</a>
+        </div>
+        <div class="project-card">
+            <img src="https://images.homify.com/v1473350477/p/photo/image/1645132/APOTEMA_RENDER_2_1.jpg" alt="Area Empresarial">
+            <a href="areaempresarial.html">Area Empresarial</a>
+        </div>
+        <div class="project-card">
+            <img src="https://cloudfront-us-east-1.images.arcpublishing.com/infobae/XRMGI6O5JJGX7OF2GUBAF56LMI.jpg" alt="Vivienda Digna">
+            <a href="viviendadigna.html">Vivienda Digna</a>
+        </div>
+    </div>
+</section>
+
+<section id="eventos">
+    <h2>Eventos</h2>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="https://www.soydebuenaventura.com/media/img/20240603_fag05562.jpg" alt="Evento 1">
+            <img src="https://www.buenaventura.gov.co/media/img/20211029_vii_encuentro_cocinando_desde_la_raiz-1000_653.jpg" alt="Evento 2">
+            <img src="https://www.buenaventura.gov.co/media/img/20210821_cine_al_barrio_llego_hasta_brisas_del_pacifico-1000_563.jpg" alt="Evento 3">
+            <img src="https://www.buenaventura.gov.co/media/img/20201103_centro_de_eventos.jpg" alt="Evento 4">
+            <img src="https://www.buenaventura.gov.co/media/img/20240408_con_600_deportistas_y_nueve_delegaciones_regionales_se_llevo_a_cabo_el_festival_deportivo_somos_una_gran_familia_el_fin_de_semana_en_buenaventura.jpeg" alt="Evento 5">
+        </div>
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+</section>
+
+<section id="noticias">
+    <h2>Noticias</h2>
+    <div class="carousel-container">
+        <div class="carousel-slide">
+            <img src="https://i.ytimg.com/vi/PWkHKn16u9g/sddefault.jpg" alt="Noticia 1">
+            <img src="https://imgcdn.larepublica.co/cms/2017/08/24200043/buena2.jpg?" alt="Noticia 2">
+            <img src="https://i.ytimg.com/vi/FFd4r7h906A/maxresdefault.jpg" alt="Noticia 3">
+            <img src="https://www.soydebuenaventura.com/media/img/20160405_mision_asia_pacifico_abr52016_10-800_533.jpg" alt="Noticia 4">
+            <img src="https://www.soydebuenaventura.com/media/img/20160405_mision_asia_pacifico_abr52016_8-800_533.jpg" alt="Noticia 5">
+        </div>
+        <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+        <a class="next" onclick="moveSlide(1)">&#10095;</a>
+    </div>
+</section>
+
+<section id="contactanos">
+    <h2>Contactanos</h2>
+    <form class="contact-form">
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <select required>
+            <option value="" disabled selected>Elección</option>
+            <option value="juridico">Jurídico</option>
+            <option value="empresa">Empresa</option>
+        </select>
+        <textarea placeholder="Mensaje" rows="4" required></textarea>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 CAEB Buenaventura. Todos los derechos reservados.</p>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    showSlide(slideIndex);
+
+    function moveSlide(n) {
+        showSlide(slideIndex += n);
+    }
+
+    function showSlide(n) {
+        const slides = document.querySelectorAll('.carousel-slide img');
+        if (n >= slides.length) { slideIndex = 0 }
+        if (n < 0) { slideIndex = slides.length - 1 }
+        slides.forEach((slide, index) => {
+            slide.style.display = (index === slideIndex) ? "block" : "none";
+        });
+    }
+</script>
+</body>
+</html>
